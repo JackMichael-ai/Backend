@@ -1,0 +1,13 @@
+
+        body {
+            background-color: #f0f2f5;
+        }
+        .navbar {
+            background-color: #0d6efd;
+        }
+        .navbar-brand, .nav-link {
+            color: white !important;
+        }
+        .card-actions a {
+            margin-right: 5px;
+        }
