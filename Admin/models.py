@@ -1,6 +1,10 @@
 from django.db import models
 
 class Item(models.Model):
+    image = models.ImageField(upload_to='items/',null=True,blank=True)
+    title = models.CharField(max_length=20)
+    description = models.TextField()
+    price = models.IntegerField()
     title = models.CharField(max_length=100, unique=True)
     description = models.TextField()
     category = models.CharField(max_length=50)
