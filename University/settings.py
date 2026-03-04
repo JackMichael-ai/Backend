@@ -40,15 +40,17 @@ INSTALLED_APPS = [
     'Admin'
 ]
 
-MIDDLEWARE = [
+MIDDLEWARE = \
+    [
     'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware', # 1. Sessions first
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware', # 2. Auth second
+    'django.contrib.messages.middleware.MessageMiddleware',    # 3. Messages third
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
 
 ROOT_URLCONF = 'University.urls'
 
@@ -125,3 +127,10 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+# settings.py
+
+# Where to go after login
+LOGIN_REDIRECT_URL = 'dashboard'
+
+# Where to go after logout
+LOGOUT_REDIRECT_URL = 'login'
