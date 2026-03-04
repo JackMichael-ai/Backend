@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Pay With Mpesa</title>
+</head>
+<body>
+<form method="post">
+    {% csrf_token %}
+    <input type="text"
+           name="phone"
+           placeholder="Enter Phone Number (07xxxxxxxx)"
+           class="form-control mb-2"
+           required>
+
+    <input type="number"
+           name="amount"
+           placeholder="Enter Amount (KES)"
+           class="form-control mb-3"
+           required>
+    <button type="submit" class="btn btn-success w-100"
+            Pay Now
+            </button>
+</form>
+</body>
+</html>
